@@ -1,16 +1,25 @@
-// З використанням властивостей і методів DOM-елементів, напиши скрипт, який:
+// ======== 1 ========
 
-// Порахує й виведе в консоль кількість категорій в ul#categories, тобто елементів li.item.
-// Для кожного елемента li.item у списку ul#categories знайде й виведе в консоль текст заголовка елемента (тегу <h2>) і кількість елементів у категорії (усіх <li>, вкладених у нього).
+// const elements = document.getElementById("categories");
+// const length = elements.children.length;
 
-const element = document.getElementById("categories");
-const length = element.children.length;
+// console.log(`Number of categories: ${length}`);
 
-console.log(length);
+// for (let index = 0; index < length; index++) {
+//   const item = element.children[index];
+//   const title = item.getElementsByTagName("h2")[0].innerHTML;
+//   const count = item.getElementsByTagName("li").length;
+//   console.log(`${title}: ${count}`);
+// }
 
-for (let index = 0; index < length; index++) {
-  const item = element.children[index];
-  const title = item.getElementsByTagName("h2")[0].innerHTML;
-  const count = item.getElementsByTagName("li").length;
-  console.log(`${title}: ${count}`);
-}
+// ======== 2 ========
+// ===With forEach===
+
+const elementsArr = document.querySelectorAll(".item");
+const length = elementsArr.length;
+console.log(`Number of categories: ${length}`);
+
+elementsArr.forEach((element) => {
+  console.log(`Category: ${element.querySelector("h2").textContent}`);
+  console.log(`Elements: ${element.getElementsByTagName("li").length}`);
+});

@@ -1,8 +1,3 @@
-// Ти можеш створити й додати HTML-елементи, використовуючи document.createElement() і elem.append() або шаблонні рядки і elem.insertAdjacentHTML().
-
-// Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
-// Додай мінімальне оформлення галереї флексбоксами через CSS класи.
-
 const images = [
   {
     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
@@ -30,7 +25,8 @@ const images = [
   },
 ];
 
-// const element = document.getElementsByClassName("gallery");
+// ======== 1 ========
+
 const element = document.querySelector(".gallery");
 
 const nodeElements = images.map(({ url, alt }) => {
@@ -43,3 +39,17 @@ const nodeElements = images.map(({ url, alt }) => {
 });
 
 element.append(...nodeElements);
+
+// ======== 2 ========
+
+// const list = document.querySelector(".gallery");
+
+// const imgMarcup = images
+//   .map(
+//     (image) =>
+//       `<li class="gallery"><img src="${image.url}" alt="${image.alt}"></li>`
+//   )
+//   .join("");
+// console.log(imgMarcup);
+
+// list.innerHTML = imgMarcup;
