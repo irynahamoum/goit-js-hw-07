@@ -31,10 +31,12 @@ const element = document.querySelector(".gallery");
 
 const nodeElements = images.map(({ url, alt }) => {
   const liElement = document.createElement("li");
+
   const imgElement = document.createElement("img");
   imgElement.src = url;
   imgElement.alt = alt;
   liElement.append(imgElement);
+
   return liElement;
 });
 

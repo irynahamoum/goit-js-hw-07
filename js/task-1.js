@@ -16,7 +16,9 @@
 // ===With forEach===
 
 const elementsArr = document.querySelectorAll(".item");
+
 const length = elementsArr.length;
+
 console.log(`Number of categories: ${length}`);
 
 elementsArr.forEach((element) => {
