@@ -27,31 +27,31 @@ const images = [
 
 // ======== 1 ========
 
-const element = document.querySelector(".gallery");
+// const element = document.querySelector(".gallery");
 
-const nodeElements = images.map(({ url, alt }) => {
-  const liElement = document.createElement("li");
+// const nodeElements = images.map(({ url, alt }) => {
+//   const liElement = document.createElement("li");
 
-  const imgElement = document.createElement("img");
-  imgElement.src = url;
-  imgElement.alt = alt;
-  liElement.append(imgElement);
+//   const imgElement = document.createElement("img");
+//   imgElement.src = url;
+//   imgElement.alt = alt;
+//   liElement.append(imgElement);
 
-  return liElement;
-});
+//   return liElement;
+// });
 
-element.append(...nodeElements);
+// element.append(...nodeElements);
 
 // ======== 2 ========
 
-// const list = document.querySelector(".gallery");
+const list = document.querySelector(".gallery");
 
-// const imgMarcup = images
-//   .map(
-//     (image) =>
-//       `<li class="gallery"><img src="${image.url}" alt="${image.alt}"></li>`
-//   )
-//   .join("");
-// console.log(imgMarcup);
+const imgMarcup = images
+  .map(
+    (image) =>
+      `<li class="gallery-li"><img src="${image.url}" alt="${image.alt}"></li>`
+  )
+  .join("");
+console.log(imgMarcup);
 
-// list.innerHTML = imgMarcup;
+list.innerHTML = imgMarcup;
